@@ -4,6 +4,15 @@ import pandas as pd
 import folium
 import webbrowser
 
+
+def clean_coordinates_data(coordinates):
+    """cleaning coordinates data (removing degree etc.)"""
+    print('Cleaning coordinates Data...')
+    coordinates['Latitude'] = coordinates['Latitude'].apply(lambda cord: cord[0:5]).astype('float')
+    coordinates['Longitude'] = coordinates['Longitude'].apply(lambda cord: cord[0:5]).astype('float')
+    return coordinates
+
+
 if __name__ == '__main__':
 
     # get coordinates of states
@@ -20,3 +29,4 @@ if __name__ == '__main__':
                                 match='State/Union Territory')
     # creates df from corona statistics data
     covid19 = pd.DataFrame(corona_stats[0])
+
