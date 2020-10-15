@@ -48,6 +48,11 @@ def save_file(map, dir_path):
     return file_path
 
 
+def auto_open(file_path):
+    """open map.html file automatically"""
+    webbrowser.open_new_tab(file_path)
+
+
 if __name__ == '__main__':
 
     # get coordinates of states
