@@ -37,6 +37,17 @@ def zip_final_data(final_data):
     return final_zip_data
 
 
+def save_file(map, dir_path):
+    """save the file in the projects directory & return file path"""
+    file_name = input("Enter file name in which you want to save the map: ")
+    file_path = os.path.join(dir_path, f'{file_name}.html')
+
+    map.save(file_path)
+
+    print(f"File Saved to {file_path}")
+    return file_path
+
+
 if __name__ == '__main__':
 
     # get coordinates of states
