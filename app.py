@@ -62,3 +62,6 @@ if __name__ == '__main__':
 
     # joining two Dataframes
     final_data = merged_data(coordinates, covid19)
+
+    # get zipped data from final data
+    final_zip_data = zip_final_data(final_data)
