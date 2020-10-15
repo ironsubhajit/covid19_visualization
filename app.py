@@ -50,3 +50,6 @@ if __name__ == '__main__':
 
     # new & cleaned covid19 data
     covid19 = clean_covid19_data(covid19)
+
+    # joining two Dataframes
+    final_data = merged_data(coordinates, covid19)
