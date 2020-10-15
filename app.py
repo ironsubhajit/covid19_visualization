@@ -65,3 +65,6 @@ if __name__ == '__main__':
 
     # get zipped data from final data
     final_zip_data = zip_final_data(final_data)
+
+    # create map of india and zoomed to it
+    india = folium.Map(location=[20.5937, 78.9629], zoom_start=5)
