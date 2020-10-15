@@ -13,6 +13,14 @@ def clean_coordinates_data(coordinates):
     return coordinates
 
 
+def clean_covid19_data(covid19):
+    """cleaning covid19 data for easy to use"""
+    print('Cleaning covid19 Data...')
+    covid19 = covid19.iloc[:-2, :-4]
+    covid19.columns = ['State', 'Total cases', 'Deaths', 'Recoveries', 'Active cases']
+    return covid19
+
+
 if __name__ == '__main__':
 
     # get coordinates of states
