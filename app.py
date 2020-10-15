@@ -37,6 +37,26 @@ def zip_final_data(final_data):
     return final_zip_data
 
 
+def mark_on_map(final_zip_data, india):
+    """make mark form the zipped data on india"""
+
+    for state, lat, long, total_cases, Death, Recov, Active in final_zip_data:
+        # for creating circle marker
+        folium.CircleMarker(location=[lat, long], radius=5, color='red',
+                            fill=True, fill_color="red").add_to(india)
+        # for creating marker
+        folium.Marker(location=[lat, long],
+                      # adding information that need to be displayed on popup
+                      popup=folium.Popup(('<strong><b>State  : ' + state + '</strong> <br>' +
+                                          '<strong><b>Total Cases : ' + total_cases + '</striong><br>' +
+                                          '<strong><font color= red>Deaths : </font>' + Death + '</striong><br>' +
+                                          '<strong><font color=green>Recoveries : </font>' + Recov + '</striong><br>' +
+                                          '<strong><b>Active Cases : ' + Active + '</striong>'),
+                                         max_width=200)).add_to(india)
+    # return map object
+    return india
+
+
 def save_file(map, dir_path):
     """save the file in the projects directory & return file path"""
     file_name = input("Enter file name in which you want to save the map: ")
