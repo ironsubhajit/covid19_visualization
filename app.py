@@ -105,6 +105,9 @@ if __name__ == '__main__':
     # create map of india and zoomed to it
     india = folium.Map(location=[20.5937, 78.9629], zoom_start=5)
 
+    # get the new marked map
+    india = mark_on_map(final_zip_data, india)
+
     project_dir_path = os.path.dirname(os.path.abspath(__file__))
 
     # saving the map
