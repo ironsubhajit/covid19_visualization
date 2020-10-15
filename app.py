@@ -38,3 +38,8 @@ if __name__ == '__main__':
     # creates df from corona statistics data
     covid19 = pd.DataFrame(corona_stats[0])
 
+    # new & cleaned coordinates data
+    coordinates = clean_coordinates_data(coordinates)
+
+    # new & cleaned covid19 data
+    covid19 = clean_covid19_data(covid19)
