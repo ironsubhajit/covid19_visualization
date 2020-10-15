@@ -112,3 +112,6 @@ if __name__ == '__main__':
 
     # saving the map
     file_path = save_file(india, project_dir_path)
+
+    # visualizing the final output
+    auto_open(file_path)
