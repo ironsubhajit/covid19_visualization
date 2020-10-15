@@ -10,3 +10,6 @@ if __name__ == '__main__':
     print("scraping coordinates data... ")
     info = pd.read_html(
         'http://www.quickgs.com/latitudinal-and-longitudinal-extents-of-india-indian-states-and-cities/')
+
+    # creates a df from that table data
+    coordinates = pd.DataFrame(info[0])
