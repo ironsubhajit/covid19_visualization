@@ -28,6 +28,15 @@ def merged_data(coordinates, covid19):
     return final_data
 
 
+def zip_final_data(final_data):
+    """zip the merged data"""
+    final_zip_data = zip(list(final_data['State']), list(final_data['Latitude']),
+                         list(final_data['Longitude']), list(final_data['Total cases']),
+                         list(final_data['Deaths']), list(final_data['Recoveries']),
+                         list(final_data['Active cases']))
+    return final_zip_data
+
+
 if __name__ == '__main__':
 
     # get coordinates of states
