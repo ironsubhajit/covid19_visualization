@@ -21,6 +21,13 @@ def clean_covid19_data(covid19):
     return covid19
 
 
+def merged_data(coordinates, covid19):
+    """merging two DataFrames"""
+    print("Merging coordinates and covid19 data...")
+    final_data = pd.merge(coordinates, covid19, how='inner', on='State')
+    return final_data
+
+
 if __name__ == '__main__':
 
     # get coordinates of states
